@@ -1,5 +1,7 @@
 const { Schema, Types } = require('mongoose');
 
+const mongooseDateFormat = require('mongoose-date-format');
+
 const reactionSchema = new Schema( {
     reactionId: {
         type: Schema.Types.ObjectId,
@@ -20,5 +22,7 @@ const reactionSchema = new Schema( {
         default: Date.now,
     }
 })
+
+reactionSchema.plugin(mongooseDateFormat);
 
 module.exports = reactionSchema;

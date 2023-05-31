@@ -2,6 +2,8 @@ const { Schema, model } = require("mongoose");
 
 const Reaction = require("./Reaction");
 
+const mongooseDateFormat = require('mongoose-date-format');
+
 const thoughtSchema = new Schema(
   {
     thoughtText: {
@@ -33,6 +35,11 @@ thoughtSchema.virtual("reactionCount").get(function () {
   return this.reactions.length;
 });
 
+
+
 const Thought = model("thought", thoughtSchema);
+
+thoughtSchema.plugin(mongooseDateFormat);
+
 
 module.exports = Thought;
