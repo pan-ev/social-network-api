@@ -1,5 +1,6 @@
 const { Schema, model } = require("mongoose");
 
+// Import the Reaction Schema
 const Reaction = require("./Reaction");
 
 const mongooseDateFormat = require('mongoose-date-format');
@@ -39,6 +40,7 @@ thoughtSchema.virtual("reactionCount").get(function () {
 
 const Thought = model("thought", thoughtSchema);
 
+// Format timestamps
 thoughtSchema.plugin(mongooseDateFormat);
 
 

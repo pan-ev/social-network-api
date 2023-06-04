@@ -23,6 +23,7 @@ const reactionSchema = new Schema( {
     }
 })
 
+// Format timestamps
 reactionSchema.plugin(mongooseDateFormat);
 
 module.exports = reactionSchema;

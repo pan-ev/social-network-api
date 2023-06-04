@@ -51,6 +51,7 @@ module.exports = {
     }
   },
 
+  // Update a User
   async updateUser(req, res) {
     try {
       const user = await User.findOneAndUpdate(
@@ -69,6 +70,7 @@ module.exports = {
     }
   },
 
+  // Add a Friend
   async addFriend(req, res) {
     try {
       const user = await User.findOneAndUpdate(
@@ -86,6 +88,8 @@ module.exports = {
       res.status(500).json(err);
     }
   },
+
+  // Remove a friend 
   async removeFriend(req, res) {
     try {
       const user = await User.findOneAndUpdate(
